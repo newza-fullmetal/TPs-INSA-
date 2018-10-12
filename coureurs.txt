@@ -1,0 +1,8 @@
+nb_etape:3
+nb_equipe:1
+EQ1:
+1,nom1,prenom1
+2,nom2,prenom2
+3,nom3,prenom3
+4,nom4,prenom4
+5,nom5,prenom5
