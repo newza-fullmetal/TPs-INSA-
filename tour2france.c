@@ -120,8 +120,9 @@ int main (int argc, char *argv[])
         }
 		printf("nom d'equipe : %s", nom_equipe);
 		printf("nb etape : %d \n",nb_etape);
-		Afficher_Liste(liste_coureurs->debut);
+		Afficher_Liste(liste_coureurs);
 		fclose(fichier);
+		printf("--- FIN RECUPERATION DONNEES COUREURS---\n");
 	}
 	else 
 	{
@@ -132,14 +133,14 @@ int main (int argc, char *argv[])
 	
 	int etape ; 
 	for(etape = 1; etape<nb_etape; etape++){
-		printf("Etape %d \n", etape);
+		printf("--- ETAPE %d ---\n", etape);
 		Temps_Etape(liste_coureurs); //calcul le temps
 		tri_a_bulle(liste_coureurs); //tri et classe
-		Afficher_Liste(liste_coureurs->debut);
+		Afficher_Liste(liste_coureurs);
 	}
 	Dopage_Aleatoire(liste_coureurs);
-	printf("CLASSEMENT FINALE \n", etape);
-	Afficher_Liste(liste_coureurs->debut);
+	printf("--- CLASSEMENT FINALE ---\n", etape);
+	Afficher_Liste(liste_coureurs);
 	return 0;
 }
 

@@ -136,22 +136,12 @@ Coureur* Get_Coureur(Liste_Coureurs* liste_coureurs)
 	
 }
 	
-
 /**
-* Retire un coureur de la liste
-// */
-// void supprimer_coureur(int dossard, Liste *courant){
-	// if (dossard > 0)
-		// if (courant->liste->coureur->dossard == dossard)
-			// courant->
-// }
-
-/**
-* Affiche la liste des coureurs
+* Affiche la liste des coureurs en parcourant depuis le début
 */
-void Afficher_Liste(Liste* liste)
+void Afficher_Liste(Liste_Coureurs* liste)
 {
-    Liste *tmp = liste;
+    Liste *tmp = liste->debut;
     /* Tant que l'on n'est pas au bout de la liste */
     while(tmp != NULL)
     {
