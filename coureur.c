@@ -1,20 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h> //Used to import "malloc" function
+#include <string.h>
 #include <coureur.h>
 
-Coureur *Creer_Coureur(char* nom, char* prenom, char* equipe){
+Coureur *Creer_Coureur(char* nom, char* prenom, char* equipe, int dossard){
 	Coureur *coureur; 
 	coureur = malloc(sizeof(Coureur));
-	coureur->nom=nom; // equal to (*coureur).nom
-	coureur->prenom=prenom;
-	coureur->equipe=equipe;
-	coureur->dossard=0; 
+	strcpy(coureur->nom,nom); // equal to (*coureur).nom
+	strcpy(coureur->prenom,prenom);
+	strcpy(coureur->equipe,equipe);
+	coureur->dossard=dossard; 
 	coureur->temps_cumule=0;
-	
+	return coureur;
 } 
+/**
+* Ajoute du temps à un coureur donné 
+*/
 void Ajouter_Temps(Coureur *coureur, int temps_sup){
 	coureur->temps_cumule = coureur->temps_cumule + temps_sup;
 }
+
 void Afficher_Coureur(Coureur *coureur){
 	int minutes = 0;
 	int secondes = coureur->temps_cumule; 
